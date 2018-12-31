@@ -8,3 +8,4 @@ class Config:
         
         self.authorization_header = config.get("Options").get("authorization_header")
         self.tasks = config.get("Tasks")
+        self.api_token = config.get("Options").get("api_token")

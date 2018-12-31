@@ -27,8 +27,8 @@ class Plugin(metaclass=abc.ABCMeta):
         return NotImplemented
         
 class SuperPlugin(Plugin):
-    def __init__(self, *, config):
-        self.restapi = RestApi()
+    def __init__(self, *, config, api_token):
+        self.restapi = RestApi(api_token)
         self.tasks = config
         self.tasks_store = {}
         self.used_plugins = {}

@@ -5,7 +5,7 @@ from .vote import Vote
 
 app = Flask(__name__)
 config = Config("config.ini")
-super_plugin = SuperPlugin(config=config.tasks)
+super_plugin = SuperPlugin(config=config.tasks, api_token=config.api_token)
 
 @app.route("/")
 def index_endpoint():

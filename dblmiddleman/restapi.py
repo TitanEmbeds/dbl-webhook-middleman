@@ -11,13 +11,15 @@ def json_or_text(response):
     return text
 
 class RestApi:
-    def __init__(self):
+    def __init__(self, api_token):
         self.endpoint = "https://discordbots.org/api"
         self.user_agent = "DBL Webhook Middleman (https://github.com/TitanEmbeds/dbl-webhook-middleman) Python/{0} requests/{1}".format(sys.version_info, requests.__version__)
+        self.api_token = api_token
     
     def request(self, verb, url, **kwargs):
         headers = {
-            "User-Agent": self.user_agent
+            "User-Agent": self.user_agent,
+            "Authorization": self.api_token
         }
         
         params = None
